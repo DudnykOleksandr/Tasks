@@ -9,6 +9,14 @@
 <div ng-app="tasks" ng-controller="indexController as vm" ng-init="vm.initializeController()" class="row">
     <div class="col-md-4">
         <h2>{{title}}</h2>
+
+        <input type="text" ng-model="newTask" />
+        <button ng-click="addTask(newTask)">Add to list</button>
+
+        <div ng-repeat="task in tasks track by $index">
+            <li>{{task}}</li>
+            <button ng-click="removeTask(task)">Remove from list</button>
+        </div>
     </div>
 </div>
 
